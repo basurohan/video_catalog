@@ -4,12 +4,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import type { RouterHistory } from 'react-router-dom';
-import { setSearchTerm } from './actionCreators';
+import { setSearchTerm, clearSearchTerm } from './actionCreators';
 
 class Landing extends Component {
   props: {
     searchTerm: string,
     handleSearchTermChange: Function,
+    handleClearSearchTerm: Function,
     history: RouterHistory
   };
   goToSearch = (event: SyntheticEvent) => {
@@ -28,7 +29,7 @@ class Landing extends Component {
             placeholder="Search"
           />
         </form>
-        <Link to="/search">or Browse All</Link>
+        <Link onClick={this.props.handleClearSearchTerm} to="/search">or Browse All</Link>
       </div>
     );
   }
@@ -38,6 +39,9 @@ const mapStateToProps = state => ({ searchTerm: state.searchTerm });
 const mapDispatchToProps = (dispatch: Function) => ({
   handleSearchTermChange(event) {
     dispatch(setSearchTerm(event.target.value));
+  },
+  handleClearSearchTerm() {
+    dispatch(clearSearchTerm(''));
   }
 });
 
