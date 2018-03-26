@@ -1,19 +1,18 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-// $FlowFixMe
-const Wrapper = styled(Link)`
+const Wrapper = styled((Link: any))`
   width: 32%;
   border: 2px solid #333;
   border-radius: 4px;
   margin-bottom: 25px;
   padding-right: 10px;
   overflow: hidden;
-  text-decoration: none;
   color: black;
+  text-decoration: none;
 `;
 
 const Image = styled.img`
@@ -22,17 +21,11 @@ const Image = styled.img`
   margin-right: 10px;
 `;
 
-class ShowCard extends React.Component {
+class ShowCard extends Component {
   shouldComponentUpdate() {
     return false;
   }
-  props: {
-    poster: string,
-    title: string,
-    year: string,
-    description: string,
-    imdbID: string
-  };
+  props: Show;
   render() {
     return (
       <Wrapper className="show-card" to={`/details/${this.props.imdbID}`}>

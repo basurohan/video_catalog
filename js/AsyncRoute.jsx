@@ -1,9 +1,9 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import Spinner from './Spinner';
 
-class AsyncRoute extends React.Component {
+class AsyncRoute extends Component {
   state = {
     loaded: false
   };
@@ -13,11 +13,11 @@ class AsyncRoute extends React.Component {
       this.setState({ loaded: true });
     });
   }
-  component = null;
   props: {
     props: mixed,
     loadingPromise: Promise<{ default: Class<React.Component<*, *, *>> }>
   };
+  component = null;
   render() {
     if (this.state.loaded) {
       return <this.component {...this.props.props} />;

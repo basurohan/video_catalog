@@ -3,13 +3,13 @@
 exports[`addAPIData 1`] = `
 Object {
   "payload": Object {
-    "description": "The story of Piper Chapman, a woman in her thirties who is sentenced to fifteen months in prison after being convicted of a decade-old crime of transporting money for her drug-dealing girlfriend.",
-    "imdbID": "tt2372162",
-    "poster": "oitnb.jpg",
-    "rating": "0.8",
-    "title": "Orange Is the New Black",
-    "trailer": "th8WT_pxGqg",
-    "year": "2013–",
+    "description": "When a young boy disappears, his mother, a police chief, and his friends must confront terrifying forces in order to get him back.",
+    "imdbID": "tt4574334",
+    "poster": "st.jpg",
+    "rating": "8.6",
+    "title": "Stranger Things",
+    "trailer": "9Egf5U8xLo8",
+    "year": "2016–",
   },
   "type": "ADD_API_DATA",
 }

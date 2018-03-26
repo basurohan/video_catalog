@@ -1,19 +1,19 @@
 // @flow
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { setSearchTerm } from './actionCreators';
 
 const Header = (props: { showSearch?: boolean, handleSearchTermChange: Function, searchTerm: string }) => {
   let utilSpace;
   if (props.showSearch) {
     utilSpace = (
-      <input type="text" placeholder="Search" value={props.searchTerm} onChange={props.handleSearchTermChange} />
+      <input onChange={props.handleSearchTermChange} value={props.searchTerm} type="text" placeholder="Search" />
     );
   } else {
     utilSpace = (
-      <h2 className="header-back">
+      <h2>
         <Link to="/search">
           Back
         </Link>
